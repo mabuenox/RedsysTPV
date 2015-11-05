@@ -13,7 +13,7 @@ You can be an example here: http://redsystpv.azurewebsites.net.
 
 You can install RedsysTPV as a [nuget package](https://www.nuget.org/packages/RedsysTPV): 
 
-	PM> Install-Package AutoMapper
+	PM> Install-Package RedsysTPV
 
 ## How to use
 
@@ -28,24 +28,24 @@ The payment platform works as follow:
 ### Create payment request
 
 ```csharp
-PaymentRequestService paymentRequestService = new PaymentRequestService();
+var paymentRequestService = new PaymentRequestService();
 
 var paymentRequest = 
 	new PaymentRequest(
 		Ds_Merchant_MerchantCode: "012345678",	
 		Ds_Merchant_Terminal: "1",	
 		Ds_Merchant_TransactionType: "0",
-        	Ds_Merchant_Amount: "123",
-        	Ds_Merchant_Currency: "978",
-        	Ds_Merchant_Order: "9999TEST0001",
-        	Ds_Merchant_MerchantURL: "http://www.example.com/payment-notifications"),
-        	Ds_Merchant_UrlOK: "http://www.example.com/payment-ok",
-        	Ds_Merchant_UrlKO: "http://www.example.com/payment-ko");
+		Ds_Merchant_Amount: "123",
+		Ds_Merchant_Currency: "978",
+		Ds_Merchant_Order: "9999TEST0001",
+		Ds_Merchant_MerchantURL: "http://www.example.com/payment-notifications"),
+		Ds_Merchant_UrlOK: "http://www.example.com/payment-ok",
+		Ds_Merchant_UrlKO: "http://www.example.com/payment-ko");
 
 var formData = 
 	paymentRequestService.GetPaymentRequestFormData(
 		paymentRequest: paymentRequest,
-                merchantKey: "put_here_your_commerce_hash_key");
+		merchantKey: "put_here_your_commerce_hash_key");
 
 ViewBag.ConnectionURL = "https://sis-t.redsys.es:25443/sis/realizarPago"; // for production environment, replace with https://sis.redsys.es/sis/realizarPago
 ```
@@ -81,7 +81,6 @@ var processedPayment = paymentResponseService.GetProcessedPayment(merchantParame
 if (processedPayment.IsValidSignature)
 {
 	// Signature is correct, the request come from trusted source
-
 	if (processedPayment.IsPaymentPerformed.DefaultIfEmpty(false).Single())
 	{
 		// Payment accepted: success
@@ -97,7 +96,7 @@ else
 {
 	// Signature is not valid, the request come from untrusted source
 }
-´´´
+```
 
 ## Disclaimer
 
