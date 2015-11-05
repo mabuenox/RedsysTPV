@@ -6,9 +6,11 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
+    <licenseUrl>https://github.com/mbuenoferrer/RedsysTPV/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/mbuenoferrer/RedsysTPV</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/mbuenoferrer/RedsysTPV/master/redsys.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Initial version.</releaseNotes>
     <copyright>Copyright 2015</copyright>
   </metadata>
 </package>
