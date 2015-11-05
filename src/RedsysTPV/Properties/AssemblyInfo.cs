@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("RedsysTPV")]
-[assembly: AssemblyDescription("Library to help integrations with Redsys TPV system (SHA256 version)")]
+[assembly: AssemblyDescription("Help to integrate Redsys payment system with SHA256")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Miguel Ángel Bueno")]
+[assembly: AssemblyCompany("Miguel Ángel Bueno Ferrer")]
 [assembly: AssemblyProduct("RedsysTPV")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
