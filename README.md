@@ -1,4 +1,4 @@
-# RedsysTPV 
+﻿# RedsysTPV 
 
 ## SHA256 signature implementation
 
@@ -103,7 +103,7 @@ else
 
 ## Disclaimer
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+This program is distributed in the hope that it will be useful, but **WITHOUT ANY WARRANTY**.
 
 ## License
 
