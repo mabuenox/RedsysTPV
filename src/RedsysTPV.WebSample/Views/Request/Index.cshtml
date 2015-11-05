@@ -1,0 +1,19 @@
+﻿@model RedsysTPV.Models.PaymentFormData
+@{
+    ViewBag.Title = "Conectando con TPV Redsys, espere por favor...";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>@ViewBag.Title</h1>
+        <form name="frm" action="@ViewBag.ConnectionURL" method="POST">
+            <input type="hidden" name="Ds_SignatureVersion" value="@Model.Ds_SignatureVersion" />
+            <input type="hidden" name="Ds_MerchantParameters" value="@Model.Ds_MerchantParameters" />
+            <input type="hidden" name="Ds_Signature" value="@Model.Ds_Signature" />
+            <input type="submit" value="Enviar" style="display: none;">
+        </form>
+    </div>
+</div>
+<script>
+    document.forms[0].submit();
+</script>

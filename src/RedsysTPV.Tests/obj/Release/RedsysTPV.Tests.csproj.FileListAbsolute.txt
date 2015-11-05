@@ -1,0 +1,9 @@
+C:\Workspace\GitHub\RedsysTPV\RedsysTPV\RedsysTPV.Tests\bin\Release\RedsysTPV.Tests.dll
+C:\Workspace\GitHub\RedsysTPV\RedsysTPV\RedsysTPV.Tests\bin\Release\RedsysTPV.Tests.pdb
+C:\Workspace\GitHub\RedsysTPV\RedsysTPV\RedsysTPV.Tests\bin\Release\RedsysTPV.dll
+C:\Workspace\GitHub\RedsysTPV\RedsysTPV\RedsysTPV.Tests\bin\Release\Newtonsoft.Json.dll
+C:\Workspace\GitHub\RedsysTPV\RedsysTPV\RedsysTPV.Tests\bin\Release\RedsysTPV.pdb
+C:\Workspace\GitHub\RedsysTPV\RedsysTPV\RedsysTPV.Tests\bin\Release\Newtonsoft.Json.xml
+C:\Workspace\GitHub\RedsysTPV\RedsysTPV\RedsysTPV.Tests\obj\Release\RedsysTPV.Tests.csprojResolveAssemblyReference.cache
+C:\Workspace\GitHub\RedsysTPV\RedsysTPV\RedsysTPV.Tests\obj\Release\RedsysTPV.Tests.dll
+C:\Workspace\GitHub\RedsysTPV\RedsysTPV\RedsysTPV.Tests\obj\Release\RedsysTPV.Tests.pdb
