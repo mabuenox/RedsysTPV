@@ -163,7 +163,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Result\Index.cshtml" />
-    <Content Include="Views\Response\Index.cshtml" />
     <Content Include="Views\Request\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

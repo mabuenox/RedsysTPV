@@ -20,7 +20,8 @@ namespace RedsysTPV.WebSample.Controllers
                 Ds_Merchant_Order: merchantOrder,
                 Ds_Merchant_MerchantURL: Url.Action("Index","Response", null, Request.Url.Scheme),
                 Ds_Merchant_UrlOK: Url.Action("OK", "Result", null, Request.Url.Scheme),
-                Ds_Merchant_UrlKO: Url.Action("KO", "Result", null, Request.Url.Scheme));
+                Ds_Merchant_UrlKO: Url.Action("KO", "Result", null, Request.Url.Scheme),
+                Ds_Merchant_Paymethods: "C"); //Only Credit Card
 
             var formData = paymentRequestService.GetPaymentRequestFormData(
                 paymentRequest: paymentRequest,

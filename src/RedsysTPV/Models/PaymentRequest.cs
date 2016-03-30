@@ -11,6 +11,7 @@
         public string Ds_Merchant_MerchantURL { get; }
         public string Ds_Merchant_UrlOK { get; }
         public string Ds_Merchant_UrlKO { get; }
+        public string Ds_Merchant_Paymethods { get; }
 
         public PaymentRequest(
             string Ds_Merchant_MerchantCode,
@@ -21,7 +22,8 @@
             string Ds_Merchant_Order,
             string Ds_Merchant_MerchantURL,
             string Ds_Merchant_UrlOK,
-            string Ds_Merchant_UrlKO)
+            string Ds_Merchant_UrlKO, 
+            string Ds_Merchant_Paymethods)
         {
             this.Ds_Merchant_MerchantCode = Ds_Merchant_MerchantCode;
             this.Ds_Merchant_Terminal = Ds_Merchant_Terminal;
@@ -32,6 +34,7 @@
             this.Ds_Merchant_MerchantURL = Ds_Merchant_MerchantURL;
             this.Ds_Merchant_UrlOK = Ds_Merchant_UrlOK;
             this.Ds_Merchant_UrlKO = Ds_Merchant_UrlKO;
+            this.Ds_Merchant_Paymethods = Ds_Merchant_Paymethods;
         }
     }
 }
