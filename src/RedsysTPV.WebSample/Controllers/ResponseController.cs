@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Web.Mvc;
 
@@ -61,7 +62,7 @@ namespace RedsysTPV.WebSample.Controllers
 
 
 
-            return View();
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
         private void LogToFile(string message)
