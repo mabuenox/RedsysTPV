@@ -17,5 +17,7 @@
         public string Ds_AuthorisationCode { get; set; }
         public string Ds_ConsumerLanguage { get; set; }
         public string Ds_Card_Type { get; set; }
+        public string Ds_Merchant_Identifier { get; set; }
+        public string Ds_ExpiryDate { get; set; }
     }
 }

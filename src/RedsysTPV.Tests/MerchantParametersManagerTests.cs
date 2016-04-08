@@ -9,43 +9,46 @@ namespace RedsysTPV.Tests
         [TestMethod]
         public void GetMerchantParameters_ShouldWork()
         {
-            PaymentRequest paymentRequest = new PaymentRequest(
-                "999008881",
-                "871",
-                "0",
-                "145",
-                "978",
-                "19990000000A",
-                "",
-                "",
-                "",
-                "");
-            IMerchantParametersManager merchantParamentersManager = new MerchantParametersManager();
+            PaymentRequest paymentRequest = new PaymentRequest()
+            {
+                Ds_Merchant_MerchantCode = "999008881",
+                Ds_Merchant_Terminal = "871",
+                Ds_Merchant_TransactionType = "0",
+                Ds_Merchant_Amount = "145",
+                Ds_Merchant_Currency = "978",
+                Ds_Merchant_Order = "19990000000A"
+            };
+
+            var merchantParamentersManager = new MerchantParametersManager();
             var result = merchantParamentersManager.GetMerchantParameters(paymentRequest);
 
-            Assert.AreEqual("eyJEc19NZXJjaGFudF9BbW91bnQiOiIxNDUiLCJEc19NZXJjaGFudF9PcmRlciI6IjE5OTkwMDAwMDAwQSIsIkRzX01lcmNoYW50X01lcmNoYW50Q29kZSI6Ijk5OTAwODg4MSIsIkRzX01lcmNoYW50X0N1cnJlbmN5IjoiOTc4IiwiRHNfTWVyY2hhbnRfVHJhbnNhY3Rpb25UeXBlIjoiMCIsIkRzX01lcmNoYW50X1Rlcm1pbmFsIjoiODcxIiwiRHNfTWVyY2hhbnRfTWVyY2hhbnRVUkwiOiIiLCJEc19NZXJjaGFudF9VcmxPSyI6IiIsIkRzX01lcmNoYW50X1VybEtPIjoiIiwiRHNfTWVyY2hhbnRfUGF5bWV0aG9kcyI6IiJ9", result);
+            Assert.AreEqual("eyJEc19NZXJjaGFudF9BbW91bnQiOiIxNDUiLCJEc19NZXJjaGFudF9PcmRlciI6IjE5OTkwMDAwMDAwQSIsIkRzX01lcmNoYW50X01lcmNoYW50Q29kZSI6Ijk5OTAwODg4MSIsIkRzX01lcmNoYW50X0N1cnJlbmN5IjoiOTc4IiwiRHNfTWVyY2hhbnRfVHJhbnNhY3Rpb25UeXBlIjoiMCIsIkRzX01lcmNoYW50X1Rlcm1pbmFsIjoiODcxIn0=", result);
         }
-
+        
         [TestMethod]
-        public void GetMerchantParameters_ShouldWork_2()
+        public void GetMerchantParameters_ShouldWork_WithMoreParams()
         {
-            PaymentRequest paymentRequest = new PaymentRequest(
-                "999008881",
-                "871",
-                "0",
-                "145",
-                "978",
-                "999911111111",
-                "",
-                "",
-                "",
-                "");
+            PaymentRequest paymentRequest = new PaymentRequest()
+            {
+                Ds_Merchant_MerchantCode = "999008881",
+                Ds_Merchant_Terminal = "871",
+                Ds_Merchant_TransactionType = "0",
+                Ds_Merchant_Amount = "145",
+                Ds_Merchant_Currency = "978",
+                Ds_Merchant_Order = "19990000000A",
+                Ds_Merchant_MerchantURL = "http://localhost/HandleNotification",
+                Ds_Merchant_UrlOK = "http://localhost/Ok",
+                Ds_Merchant_UrlKO = "http://localhost/Ko",
+                Ds_Merchant_Paymethods = "C", //Only Credit Card,
+                Ds_Merchant_Identifier = "REQUIRED"
+            };
+
             IMerchantParametersManager merchantParamentersManager = new MerchantParametersManager();
             var result = merchantParamentersManager.GetMerchantParameters(paymentRequest);
 
-            Assert.AreEqual("eyJEc19NZXJjaGFudF9BbW91bnQiOiIxNDUiLCJEc19NZXJjaGFudF9PcmRlciI6Ijk5OTkxMTExMTExMSIsIkRzX01lcmNoYW50X01lcmNoYW50Q29kZSI6Ijk5OTAwODg4MSIsIkRzX01lcmNoYW50X0N1cnJlbmN5IjoiOTc4IiwiRHNfTWVyY2hhbnRfVHJhbnNhY3Rpb25UeXBlIjoiMCIsIkRzX01lcmNoYW50X1Rlcm1pbmFsIjoiODcxIiwiRHNfTWVyY2hhbnRfTWVyY2hhbnRVUkwiOiIiLCJEc19NZXJjaGFudF9VcmxPSyI6IiIsIkRzX01lcmNoYW50X1VybEtPIjoiIiwiRHNfTWVyY2hhbnRfUGF5bWV0aG9kcyI6IiJ9", result);
+            Assert.AreEqual("eyJEc19NZXJjaGFudF9BbW91bnQiOiIxNDUiLCJEc19NZXJjaGFudF9PcmRlciI6IjE5OTkwMDAwMDAwQSIsIkRzX01lcmNoYW50X01lcmNoYW50Q29kZSI6Ijk5OTAwODg4MSIsIkRzX01lcmNoYW50X0N1cnJlbmN5IjoiOTc4IiwiRHNfTWVyY2hhbnRfVHJhbnNhY3Rpb25UeXBlIjoiMCIsIkRzX01lcmNoYW50X1Rlcm1pbmFsIjoiODcxIiwiRHNfTWVyY2hhbnRfTWVyY2hhbnRVUkwiOiJodHRwOi8vbG9jYWxob3N0L0hhbmRsZU5vdGlmaWNhdGlvbiIsIkRzX01lcmNoYW50X1VybE9LIjoiaHR0cDovL2xvY2FsaG9zdC9PayIsIkRzX01lcmNoYW50X1VybEtPIjoiaHR0cDovL2xvY2FsaG9zdC9LbyIsIkRzX01lcmNoYW50X1BheW1ldGhvZHMiOiJDIiwiRHNfTWVyY2hhbnRfSWRlbnRpZmllciI6IlJFUVVJUkVEIn0=", result);
         }
-
+        
 
         [TestMethod]
         public void GetPaymentResponse_ShouldWork()

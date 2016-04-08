@@ -8,7 +8,7 @@ namespace RedsysTPV
     {
         public string GetMerchantParameters(PaymentRequest paymentRequest)
         {
-            var json = JsonConvert.SerializeObject(paymentRequest);
+            var json = JsonConvert.SerializeObject(paymentRequest,Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
             return Base64.EncodeTo64(json);
         }
 
